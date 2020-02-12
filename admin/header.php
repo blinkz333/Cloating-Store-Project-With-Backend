@@ -66,7 +66,7 @@ Chk_Login($_SESSION['ses_admin_id'],'../index.php');
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand " href="main.php">
-                    <h4>Admin System</h4>
+                    <h4><font color="white">Admin System</font></h4>
                 </a> <!-- <span id="date_time" style="color: #000000; font-size: x-large;"></span>
 	<script type="text/javascript"> window.onload = date_time('date_time');</script> -->
 				

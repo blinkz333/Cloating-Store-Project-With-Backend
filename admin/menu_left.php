@@ -17,7 +17,7 @@ if($_REQUEST['logout']=='chk'){
                         <div class="user-section">
 
                             <div class="user-info">
-                                <div><strong>Welcome : </strong><font color="white"><?php echo $_SESSION['ses_admin_user'];?></font></div>
+                                <div><strong><font color="white">Welcome : </font></strong><font color="white"><?php echo $_SESSION['ses_admin_user'];?></font></div>
                             </div>
                         </div>
                         <!--end user image section-->

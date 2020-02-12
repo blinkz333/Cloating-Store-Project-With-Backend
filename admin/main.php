@@ -12,8 +12,9 @@
 
          <div class="row">
                 <!-- Page Header -->
+                <br/>
                 <div class="col-lg-12">
-                    <div class="panel panel-body panel-primary alert-danger"><h3>ยินดีต้อนรับสู่ระบบจัดการ <?php echo $title_web;?></h3></div>
+                    <div class="panel panel-body panel-primary alert-danger"><h3><font color="#428bca">ยินดีต้อนรับสู่ระบบจัดการ <?php echo $title_web;?></font></h3></div>
                 </div>
                 <!--End Page Header -->
             </div>
@@ -170,7 +171,123 @@ if (!$res_c) {
                         </div>
                         <!-- /.panel-body -->
                     </div>
+                    <!-- ============== Graph ================= -->
 
+                    <!-- ================ Graph2 ================ -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> กราฟแสดงยอดขายแยกตามเดือน
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                <?php
+
+
+
+$result = $conn->query("SELECT SUM(Pay_Price) AS total, DATE_FORMAT(Pay_Date, '%M') AS datesave
+FROM payment  
+GROUP BY DATE_FORMAT(Pay_Date, '%M%')");
+$resultchart = $conn->query("SELECT SUM(Pay_Price) AS total, DATE_FORMAT(Pay_Date, '%M') AS datesave
+FROM payment  
+GROUP BY DATE_FORMAT(Pay_Date, '%M%')");
+
+ 
+ 
+ //for chart
+$datesave = array();
+$total = array();
+ 
+while($rs = mysqli_fetch_array($resultchart)){ 
+  $datesave[] = "\"".$rs['datesave']."\""; 
+  $total[] = "\"".$rs['total']."\""; 
+}
+$datesave = implode(",", $datesave); 
+$total = implode(",", $total); 
+ 
+?>
+ 
+<h3 align="center">กราฟแสดงยอดขายแยกตามเดือน</h3>
+<table width="200" border="1" cellpadding="0"  cellspacing="0" align="center">
+  <thead>
+  <tr>
+    <th width="10%">เดือน</th>
+    <th width="10%">ยอดขาย</th>
+  </tr>
+  </thead>
+  
+  <?php while($row = mysqli_fetch_array($result)) { ?>
+    <tr>
+      <td align="center"><?php echo $row['datesave'];?></td>
+      <td align="center"><?php echo number_format($row['total'],2);?></td> 
+    </tr>
+    <?php } ?>
+ 
+</table>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+<hr>
+<p align="center">
+ 
+
+<canvas id="myChart" width="800px" height="300px"></canvas>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [<?php echo $datesave;?>
+    
+        ],
+        datasets: [{
+            label: 'รายงานแสดงยอดขายแยกตามเดือน (บาท)',
+            data: [<?php echo $total;?>
+            ],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>  
+
+
+                                  
+
+                                </div>
+
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>     
+                    <!-- ================ Graph2 ================ -->
+                   
+                    </br>
         </div>
         <!-- end page-wrapper -->
 

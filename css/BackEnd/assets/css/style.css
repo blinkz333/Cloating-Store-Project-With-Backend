@@ -32,7 +32,7 @@ limitations under the License.*/
  #wrapper {
     width: 100%;
     margin-top: 55px!important; 
-    background-color:#069; 
+    background-color:#FFFFFF; 
 }
 
 #page-wrapper {
@@ -134,7 +134,7 @@ limitations under the License.*/
 
 .nav-second-level li a {
     padding-left: 37px;
-	background-color:#630 ;
+	background-color:#21496b ;
 }
 
 .nav-third-level li a {
