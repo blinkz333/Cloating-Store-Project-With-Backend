@@ -23,8 +23,8 @@ if($_REQUEST['logout']=='chk'){
                         <!--end user image section-->
                     </li>
                     
-                    <li class="selected">
-                        <a href=""><i class="fa fa-dashboard fa-fw"></i>เมนูหลัก</a>
+                    <li >
+                        <a href="main.php"><i class="fa fa-dashboard fa-fw"></i>เมนูหลัก</a>
                     </li>
 					
 					<li>
