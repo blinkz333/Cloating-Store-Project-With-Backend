@@ -82,7 +82,7 @@ Logout($_SESSION['ses_user_id'],'index.php');
   </div>
   <div class="header">
     <div class="logo">
-    <img src="./images/mg8twg.jpg" alt="ชื่อร้าน">
+    <img  src="./images/logo.jpg" alt="ชื่อร้าน">
     </div>
     <div  class="header-top">
       <div class="header-grid">

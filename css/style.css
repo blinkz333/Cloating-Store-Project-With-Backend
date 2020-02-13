@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 body{
-	background:#e6e6e6;
+	background: #ffffff;;
 	font-family: 'Open Sans', sans-serif;
 }
 body a{
@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	width:15%;
 	margin:0 auto;
 	float: left;
-	min-height: 120px;
+	
 	text-align: center;
 	
 }
@@ -59,7 +59,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .online{
 	float:left;
-	background:#DB7093;
+	background:#2f2f2f;
 	width: 10%;
 	text-align: center;
 	min-height: 60px;
@@ -86,8 +86,8 @@ h1,h2,h3,h4,h5,h6,label,p{
 	  cursor: pointer;
 }
 .header-bottom {
-	background: #FF69B4;
-	padding: 1em;	
+	background: #428bca;
+	padding: 2em;	
 	margin: 0em 0 0;
 }
 select.in-drop {
@@ -319,7 +319,7 @@ select.in-drop {
 /***** Media Quries *****/
 @media screen and (max-width: 768px) {
 .header {
-  background: #4F4F4F;
+  background: #FFF;
 }
 	.h_logo4{
 		text-align:center;
@@ -408,7 +408,7 @@ select.in-drop {
 	background:#0087d5;
 }
 .line1,.line2 {
-  background: #d2232a;
+  background: #2f2f2f;
   width: 100%;
   height: 5px;
   display: block;
@@ -1063,7 +1063,7 @@ span.price-in small{
 	text-transform: uppercase;
 }
 .run-top{
-	background:#FF69B4;
+	background:#428bca;
 	padding:3em 2em;
 	min-height: 270px;
 }
@@ -1085,10 +1085,10 @@ span.price-in small{
 	color: #d2232a;
 }
 .left-footer h4{
-	background:#33CCFF;
+	background:#2f2f2f;
 }
 .top-run {
-	background:#FF69B4;
+	background:#428bca;
 	min-height: 270px;
 }
 .run-grid-in{
@@ -1099,7 +1099,7 @@ span.price-in small{
 ul.social-in {
   text-align: right;
   padding: 1em;
-  background:#33CCFF;
+  background:#2f2f2f;
 }
 ul.social-in li{
 	display: inline-block;	
@@ -1133,7 +1133,7 @@ ul.social-in li  i.twitter:hover{
 	background-position:-356px -182px;
 }
 .letter{
-	background:#FF69B4;
+	background:#428bca;
 	padding:3em 2em 1em;
 	color:#fff;
 	  min-height: 271px;

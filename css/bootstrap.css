@@ -4422,6 +4422,8 @@ a.thumbnail.active {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: #428bca;
+  color: #ffffff;
 }
 .alert h4 {
   margin-top: 0;
