@@ -1,5 +1,5 @@
 ﻿:วิธีใช้งาน:
-1. นำโฟลเดอร์ shop_yeti ไปวางที่ C:\AppServ\www (ต้องลงโปรแกรม appserv ก่อนด้วย ถ้ายังไม่ลงสามารถหา download ได้ตามเว็บ) หรือจะลงที่ xampp ก็ได้แล้วแต่สะดวก
+1. นำโฟลเดอร์ ไปวางที่ C:\AppServ\www (ต้องลงโปรแกรม appserv ก่อนด้วย ถ้ายังไม่ลงสามารถหา download ได้ตามเว็บ) หรือจะลงที่ xampp ก็ได้แล้วแต่สะดวก
 
 2. เมื่อวางไฟล์เสร็จเรียบร้อย ให้ไปที่โฟลเดอร์เรา ไปที่ ไฟล์ ชื่อ conn.php แล้วทำการเปลี่ยน pass ตรง 
 บรรทัดที่8 ปัจจุบัน pass 1234 เปลี่ยนให้ตรงกับ ตอนลงโปรแกรม appserv ไม่เช่นนั้นจะเปิดงานไม่ได้ 
@@ -9,17 +9,17 @@
 4. จะมี popup เด้งขึ้นมาหรือเป้นหน้า กรอก user กับ  pass แล้วแต่เวอร์ชั่นของ phpmyadmin ให้ทำการใส่ user = root 
 / password = pass ตอนลง appserv เหมือนกัน คล้ายๆกับข้อ 2 
 
-5.เมื่อ login สำเร็จให้ไปที่ database > สร้าง database ใหม่ ใส่ชื่อ db ว่า shop_yeti ประเภทหรือชนิด เลือกเป็น  utf8_unicode_ci 
+5.เมื่อ login สำเร็จให้ไปที่ database > สร้าง database ใหม่ ใส่ชื่อ db ว่า cloatingshop ประเภทหรือชนิด เลือกเป็น  utf8_unicode_ci 
 เมื่อสร้างเสร็จแล้ว ก้อไปที่ db ของเรา แล้วไปที่เมนู import เลือกไฟล์  > หาไฟล์ db ของเรา ซึ่งจะอยู่ใน โฟลเดอร์ sql ในโฟลเดอร์หลักงานของเรา เมื่อเลือกเสร็จแล้ว ทำการ save 
 
-6. เมื่อทำ 5 ข้อบนเสร็จแล้ว ให้ไปที่ เว็บ browser อีกครั้ง ตัวไหนก้อได้ หรือเปิดแท็บใหม่ใน browser แล้วพิมพ์ localhost/shop_yeti แล้ว enter ถ้าไม่มีอะไรผิดพลาด
+6. เมื่อทำ 5 ข้อบนเสร็จแล้ว ให้ไปที่ เว็บ browser อีกครั้ง ตัวไหนก้อได้ หรือเปิดแท็บใหม่ใน browser แล้วพิมพ์ localhost/ชื่อโฟลเดอร์ แล้ว enter ถ้าไม่มีอะไรผิดพลาด
 ทำตามขั้นตอนทุกอย่าง หน้า browserจะโชว์เว็บเรา 
 
 *วิธีเข้าระบบ
 หน้าบ้าน
-topza / 1234
+member1 / 1234
 
-หลังบ้าน admin  http://localhost/shop_yeti/admin
+หลังบ้าน admin  http://localhost/ชื่อโฟลเดอร์/admin
 admin / 1234
 
 
@@ -27,9 +27,4 @@ admin / 1234
 ***Tick***
 - วิธีแก้ปัญหา smtp error หรือ ส่ง mail ไม่ได้ ในกรณีเว็บไซต์มีระบบ email >> http://www.select2web.com/php/phpmailer-smtp-error-could-not-connect-to-smtp-host.html
 - วิธีแก้ปัญหา เปิดหน้าเว็บแล้วขึ้น error internal 500 เพราะมีการใช้ mod-rewrite >> http://www.nkinfoweb.org/news-13.html
-
-
- *ถ้าไม่เป็นการรบกวน (รบกวน Like ที่ Page หรือ Feedback ให้ด้วยนะครับ
-https://www.facebook.com/ProjectStudentss
-https://www.facebook.com/ApdSofts/
 
