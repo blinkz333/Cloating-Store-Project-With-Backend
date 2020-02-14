@@ -18,25 +18,12 @@
 			</div>
 		</div> -->
 		
-		<div class="col-md-8 footer-left left-footer">
+		<div class="col-md-12 footer-left left-footer">
 			<h4>ช่องทางการติดต่อ</h4>
 			<div class="run-top top-run">
 			<ul class="run-grid">
 			<!-- <li><a href="index.php"><?php echo $title_web;?></a></li> -->
-			<li><a href="index.php">จัดจำหน่ายเสื้อผ้า Handmand ผลิตชิ้นต่อชิ้น</a></li>
-			</ul>
-			<div class="clearfix"> </div>
-			</div>
-		</div>
-		
-		<div class="col-md-4 footer-left left-footer">
-			<ul class="social-in">
-				<!-- <li><a href="#"><i> </i></a></li> -->
-				<li><a href="#"><i class="youtube"> </i></a></li>
-				<li><a href="#"><i class="facebook"> </i></a></li>
-				<li><a href="#"><i class="twitter"> </i></a></li>
-			</ul>
-			<div class="letter">
+			<li><div class="letter">
 				<h5>ติดต่อเรา</h5>
 				<p><?php echo $contact_web;?></p>
 				<p class="footer-class"> © 2018 <?php echo $title;?> All Rights Reserved </p>
@@ -46,9 +33,10 @@
                 <p>จำนวนผู้เข้าเว็บไซต์: <?php echo $row;?></p>
                 <br>
                 <a href="admin/index.php" class="text-success" target="_blank">สำหรับผู้ดูแลระบบ</a> 
+			</div></li>
+			</ul>
+			<div class="clearfix"> </div>
 			</div>
-			
 		</div>
-		
 		<div class="clearfix"> </div>
 	</div>

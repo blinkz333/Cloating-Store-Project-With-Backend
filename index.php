@@ -17,7 +17,7 @@ $conn->query("insert count_page set Cou_Date = now(),Cou_IP = '$ip'");
     <div class="thumbnail">
       <a href="view_product.php?id=<?php echo $show['Pro_ID'];?>" class="lot"><img class="img-responsive" height="140px" width="150px" src="images/product/<?php echo $show['Pro_Img'];?>" alt=""></a>
       <div class="caption">
-        <h3><a href="view_product.php?id=<?php echo $show['Pro_ID'];?>"><?php echo iconv_substr($show['Pro_Name'],0,10,'UTF-8').'...';?></a></h3>
+        <h3><a href="view_product.php?id=<?php echo $show['Pro_ID'];?>"><?php echo iconv_substr($show['Pro_Name'],0,20,'UTF-8').'...';?></a></h3>
         <?php if($show['Pro_Discount']!=""){?>
                 <h4  class="text-success">
                 <b><S><?php echo number_format($show['Pro_Price'],0);?></S></b>

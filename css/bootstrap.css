@@ -307,6 +307,13 @@ figure {
 img {
   vertical-align: middle;
 }
+
+.imgForShow{
+  border-radius: 8px;
+    width: 467;
+    height: 467;
+}
+
 .img-responsive,
 
 .img-rounded {

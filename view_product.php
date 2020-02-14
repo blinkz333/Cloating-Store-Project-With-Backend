@@ -9,20 +9,20 @@ $show = $sql->fetch_assoc();
 
 ?>	
 
-	<h2 class="alert alert-danger"><?php echo $show['Pro_Name'];?></h2>
+	<h2 class="alert"><?php echo $show['Pro_Name'];?></h2>
 
   <hr>
 
   	<!---->	
 	<div class="container">
-<div class="single">
+		<div class="single">
 				<div class="col-md-12 top-in-single">
-					<div class="col-md-5 single-top">	
+					<div class="col-md-7 single-top">	
 						
-									<img class="etalage_thumb_image img-responsive" src="images/product/<?php echo $show['Pro_Img'];?>" alt="" >
+									<img class="imgForShow" src="images/product/<?php echo $show['Pro_Img'];?>" alt="" >
 							
 					</div>	
-					<div class="col-md-7 single-top-in">
+					<div class="col-md-5 single-top-in">
 						<div class="single-para">
 							<h5><b>รหัสสินค้า: <?php echo $show['Pro_ID'];?></b></h5>
 							<h4>ชื่อสินค้า: <?php echo $show['Pro_Name'];?></h4>
