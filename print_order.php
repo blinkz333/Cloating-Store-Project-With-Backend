@@ -59,7 +59,7 @@ else if($show['Ord_Status']==4){$status =  '<span class=text-danger>ยกเล
       <div class="col-sm-5 invoice-col">
         <strong>ข้อมูลติดต่อร้าน</strong>
         <address>
-          <strong class="text-primary"><?php echo $title_web;?></strong><br>
+          <strong class="text-primary"><?php echo $address;?></strong><br>
         </address>
       </div>
       <!-- /.col -->

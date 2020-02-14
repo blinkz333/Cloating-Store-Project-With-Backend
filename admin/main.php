@@ -22,7 +22,7 @@
             <!--Simple table example -->
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> ตารางแสดงข้อมูลการสั่งซื้อทั้งหมด
+                            <i class="fa fa-bar-chart-o fa-fw"></i> ข้อมูลการสั่งซื้อทั้งหมดที่ทำการจ่ายเงินแล้ว
                         </div>
 
                         <div class="panel-body">
@@ -39,7 +39,7 @@
                                                     <th class="small">เบอร์ติดต่อ</th>
                                                     <th class="small">จำนวนสั่งซื้อ (ชิ้น)</th>
                                                     <th class="small">จำนวนเงิน (บาท)</th>
-                                                    <th class="small">วันที่สั่งซื้อ</th>
+                                                    <th class="small">วันที่ทำการโอนเงิน</th>
                                                     <th class="small">สถานะ</th>
                                             </tr>
                                         </thead>

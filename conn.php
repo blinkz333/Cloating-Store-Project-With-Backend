@@ -19,7 +19,7 @@ mysqli_set_charset($conn, "utf8");
 $title_web = "เสื้อผ้า Handmade "; //ชื่อระบบ ส่วนหัวของระบบ
 $url_web = "127.0.0.1/cloatingShop"; //link access to system
 $contact_web = "dev"; //ติดต่อข้อมูล
-
+$address = "99/99 dev address , Bangkok 10400"
 ?>
 
 
