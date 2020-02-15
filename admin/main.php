@@ -39,7 +39,8 @@
                                                     <th class="small">เบอร์ติดต่อ</th>
                                                     <th class="small">จำนวนสั่งซื้อ (ชิ้น)</th>
                                                     <th class="small">จำนวนเงิน (บาท)</th>
-                                                    <th class="small">วันที่ทำการโอนเงิน</th>
+                                                    <th class="small">วันที่ทำการสั่งซื้อ</th>
+                                                    <th class="small">วันที่ทำการจัดส่ง</th>
                                                     <th class="small">สถานะ</th>
                                             </tr>
                                         </thead>
@@ -71,6 +72,7 @@ else if($show['Ord_Status']==4){$status =  '<span class=text-danger>ยกเล
                   <td class="small" align="center"><?php echo $show['Ord_AmountTotal'];?></td>
                   <td class="small" align="center"><?php echo number_format($show['Ord_PriceTotal'],0);?></td>
                   <td class="small"><?php echo $show['Ord_DateBuy'];?></td>
+                  <td class="small"><?php echo $show['Ord_DateShipping'];?></td>
                   <td class="small"><?php echo $status;?></td>
                   
                                             </tr>
