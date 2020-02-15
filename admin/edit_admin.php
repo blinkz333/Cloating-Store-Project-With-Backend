@@ -67,23 +67,23 @@ else {
 									
 									<div class="col-lg-6 form-group">
 									<label>ชื่อ-นามสกุล</label>
-									<input name="name" type="text" class="form-control" required value="<?php echo $show[Mem_Name];?>">
+									<input name="name" type="text" class="form-control" required value="<?php echo $show['Mem_Name'];?>">
 									</div>
 
 									<div class="col-lg-6 form-group">
 									<label>E-mail</label>
-									<input name="email" type="email" class="form-control" required value="<?php echo $show[Mem_Email];?>">
+									<input name="email" type="email" class="form-control" required value="<?php echo $show['Mem_Email'];?>">
 									</div>
 									
 									
 									<div class="col-lg-6 form-group">
 									<label>Username</label>
-									<input name="user" type="text" class="form-control" required value="<?php echo $show[Mem_User];?>">
+									<input name="user" type="text" class="form-control" required value="<?php echo $show['Mem_User'];?>">
 									</div>
 									
 									<div class="col-lg-6 form-group">
 									<label>Password</label>
-									<input name="pass" type="password" class="form-control" required value="<?php echo $show[Mem_Pass];?>">
+									<input name="pass" type="password" class="form-control" required value="<?php echo $show['Mem_Pass'];?>">
 									</div>
 
 

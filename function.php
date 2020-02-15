@@ -33,19 +33,19 @@ if($show['Mem_Permission']==1){
 
 if($show['Mem_Status']==1){
   
-$_SESSION[ses_admin_id] = $show[0];
-$_SESSION[ses_admin_user] = $show[1];
+$_SESSION['ses_admin_id'] = $show[0];
+$_SESSION['ses_admin_user'] = $show[1];
 
 Alert('ยินดีต้อนรับเข้าสู่ระบบ',$link); 
 
 }else if($show['Mem_Status']==2){
 	
-$_SESSION[ses_user_id] = $show[0];
-$_SESSION[ses_user_user] = $show[1];
-$_SESSION[ses_user_name] = $show[3];
-$_SESSION[ses_user_email] = $show[4];
-$_SESSION[ses_user_tel] = $show[5];
-$_SESSION[ses_user_address] = $show[6];
+$_SESSION['ses_user_id'] = $show[0];
+$_SESSION['ses_user_user'] = $show[1];
+$_SESSION['ses_user_name'] = $show[3];
+$_SESSION['ses_user_email'] = $show[4];
+$_SESSION['ses_user_tel'] = $show[5];
+$_SESSION['ses_user_address'] = $show[6];
 
 Alert('ยินดีต้อนรับเข้าสู่ระบบ',$link);	
 

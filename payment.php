@@ -42,12 +42,12 @@ Chk_Insert($sql,'รอตรวจสอบชำระเงิน','history_o
 
           <div class="form-group col-md-12">
             <h3>ชื่อผู้ชำระเงิน:</h3>
-            <input name="name" type="text" class="form-control" required value="<?php echo $show2[Mem_Name];?>">
+            <input name="name" type="text" class="form-control" required value="<?php echo $show2['Mem_Name'];?>">
           </div>
 
           <div class="form-group col-md-12">
             <h3>จำนวนเงินที่ต้องชำระ:</h3>
-            <input name="price" type="text" class="form-control" disabled value="<?php echo $show2[Ord_PriceTotal];?>">
+            <input name="price" type="text" class="form-control" disabled value="<?php echo $show2['Ord_PriceTotal'];?>">
           </div>
 
           <div class="form-group col-md-12">
@@ -57,7 +57,7 @@ Chk_Insert($sql,'รอตรวจสอบชำระเงิน','history_o
 
           <div class="form-group col-md-12">
             <h3>เบอร์ติดต่อ:</h3>
-            <input name="tel" type="text" class="form-control" required onKeyPress="CheckNumber()" value="<?php echo $show2[Mem_Tel];?>">
+            <input name="tel" type="text" class="form-control" required onKeyPress="CheckNumber()" value="<?php echo $show2['Mem_Tel'];?>">
           </div>
 
           <div class="form-group col-md-12">
