@@ -26,7 +26,7 @@ Upload_File ($filename,$folder,$width,$height);
 
 
 //เพิ่มข้อมูลลง table ที่กำหนด โดยให้ชื่อฟิลด์ใน table ใน db = ค่าที่รับมา
-$sql = $conn->query("insert product set Pro_Img = '$filename',Pro_Name = '$_REQUEST[name]',Pro_Detail = '$detail',Pro_Price = '$_REQUEST[price]',Pro_Promotion = '$_REQUEST[status]',Pro_Amount = '$_REQUEST[amount]',Pro_Date = now()");
+$sql = $conn->query("insert product set Pro_Img = '$filename',Pro_Name = '$_REQUEST[name]',Pro_Detail = '$detail',Pro_Price = '$_REQUEST[price]',Pro_Promotion = '$_REQUEST[status]',Pro_SaleType = '$_REQUEST[saleType]',Pro_Amount = '$_REQUEST[amount]',Pro_Date = now()");
 
 
 //function check เพิ่มข้อมูล จะมี alert ขึ้นมา ตามเงื่อนไข
@@ -63,14 +63,14 @@ if($file){
 Upload_File ($filename,$folder,$width,$height);
 
 //แก้ไขข้อมูลลง table ที่กำหนด โดยให้ชื่อฟิลด์ใน table ใน db = ค่าที่รับมา โดยข้อมูลที่แก้จะเปลี่ยนแปลงตาม id ของ รายการนั้น
-$sql = $conn->query("update product set Pro_Img = '$filename',Pro_Name = '$_REQUEST[name]',Pro_Detail = '$detail',Pro_Price = '$_REQUEST[price]',Pro_Amount = '$_REQUEST[amount]',Pro_Promotion = '$_REQUEST[status]' where Pro_ID = '$_REQUEST[id]'")or die (mysqli_error());
+$sql = $conn->query("update product set Pro_Img = '$filename',Pro_Name = '$_REQUEST[name]',Pro_Detail = '$detail',Pro_Price = '$_REQUEST[price]',Pro_Amount = '$_REQUEST[amount]',Pro_Promotion = '$_REQUEST[status]',Pro_SaleType = '$_REQUEST[saleType]' where Pro_ID = '$_REQUEST[id]'")or die (mysqli_error());
 
 }
 
 else {
 
 //แก้ไขข้อมูลลง table ที่กำหนด โดยให้ชื่อฟิลด์ใน table ใน db = ค่าที่รับมา โดยข้อมูลที่แก้จะเปลี่ยนแปลงตาม id ของ รายการนั้น
-$sql = $conn->query("update product set Pro_Name = '$_REQUEST[name]',Pro_Detail = '$detail',Pro_Price = '$_REQUEST[price]',Pro_Amount = '$_REQUEST[amount]' , Pro_Promotion = '$_REQUEST[status]' where Pro_ID = '$_REQUEST[id]'")or die (mysqli_error());
+$sql = $conn->query("update product set Pro_Name = '$_REQUEST[name]',Pro_Detail = '$detail',Pro_Price = '$_REQUEST[price]',Pro_Amount = '$_REQUEST[amount]' , Pro_Promotion = '$_REQUEST[status]',Pro_SaleType = '$_REQUEST[saleType]' where Pro_ID = '$_REQUEST[id]'")or die (mysqli_error());
 
 }
 
@@ -177,8 +177,20 @@ Chk_Delete($sql,'ลบข้อมูลเรียบร้อย');
                                     
                                     <div class="form-group has-feedback">
                                         <select name="status" class="form-control">
-                                            <option value="0"<?php if($show2['Ord_Status']==0){echo 'selected';}?>>ไม่เป็นสินค้าโปรโมชั่น</option>
-                                            <option value="1"<?php if($show2['Ord_Status']==1){echo 'selected';}?>>เป็นสินค้าโปรโมชั่น</option>
+                                            <option value="0"<?php if($show2['Pro_Promotion']==0){echo 'selected';}?>>ไม่เป็นสินค้าโปรโมชั่น</option>
+                                            <option value="1"<?php if($show2['Pro_Promotion']==1){echo 'selected';}?>>เป็นสินค้าโปรโมชั่น</option>
+                                            
+                                        </select>
+                                    </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                    <label>ประเภทการขาย</label>
+                                    
+                                    <div class="form-group has-feedback">
+                                        <select name="saleType" class="form-control">
+                                            <option value="0"<?php if($show2['Pro_SaleType']==0){echo 'selected';}?>>ขายปลีก</option>
+                                            <option value="1"<?php if($show2['Pro_SaleType']==1){echo 'selected';}?>>ขายส่ง</option>
                                             
                                         </select>
                                     </div>
@@ -281,6 +293,17 @@ Chk_Delete($sql,'ลบข้อมูลเรียบร้อย');
                                         </select>
                                     </div>
                                     </div>
+
+                                    <div class="form-group col-lg-3">
+                                    <label>โปรโมชั่น</label>
+                                    
+                                    <div class="form-group has-feedback">
+                                        <select name="saleType" class="form-control">
+                                        <option value="0"<?php if($show['Pro_SaleType']==0){echo 'selected';}?>>สินค้าขายปลีก</option>
+                                        <option value="1"<?php if($show['Pro_SaleType']==1){echo 'selected';}?>>สินค้าขายส่ง</option>
+                                        </select>
+                                    </div>
+                                    </div>
                                     
                                     <div class="clearfix"></div>
 
@@ -358,6 +381,7 @@ Chk_Delete($sql,'ลบข้อมูลเรียบร้อย');
                                                     <th width="auto"><div align="center">สินค้า</div></th>
                                                     <th width="auto"><div align="center">ราคา</div></th>
                                                     <th width="auto"><div align="center">โปรโมชั่น</div></th>
+                                                    <th width="auto"><div align="center">ประเภทสินค้า</div></th>
                                                     <th width="auto"><div align="center">วันที่สร้าง</div></th>
 													<th width="15%"><div align="center">จัดการ</div></th>
 
@@ -416,6 +440,7 @@ $total_page = ceil($total_record / $perpage);
                   <td><div align="center"><?php echo $show['Pro_Name'];?></div></td>
                   <td><div align="center"><?php echo $show['Pro_Price'];?></div></td>
                   <td><div align="center"><?php if($show['Pro_Promotion'] == 0){echo "สินค้าไม่จัดโปรโมชั่น";}else{echo "สินค้าจัดโปรโมชั่น";}?></div></td>
+                  <td><div align="center"><?php if($show['Pro_SaleType'] == 0){echo "สินค้าขายปลีก";}else{echo "สินค้าขายส่ง";}?></div></td>
                   <td><div align="center"><?php echo $show['Pro_Date'];?></div></td>
 				  <td><div align="center"><a href="?admin=edit&id=<?php echo $show['Pro_ID'];?>"><input name="" type="button" class="btn btn-primary" value="Edit"></a>&nbsp;<a href="?admin=delete&id=<?php echo $show['Pro_ID'];?>"><input name="" type="button" class="btn btn-danger" value="Delete"></a></div></td>
                   </tr>

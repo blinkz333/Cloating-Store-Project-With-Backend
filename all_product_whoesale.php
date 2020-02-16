@@ -1,9 +1,9 @@
 <?php require_once "header.php";?>
 
-		<!--//sreen-gallery-cursual---->
+		<!--ขายส่ง---->
 	<div class="content-grids">
 
-	<h2 class="alert">สินค้าทั้งหมด</h2>
+	<h2 class="alert">สินค้าขายส่ง</h2>
 
   <hr>
 	
@@ -20,9 +20,9 @@ if (isset($_GET['page'])) {
  }
             $start = ($page - 1) * $perpage;
 
- $sql = $conn->query("select * from product order by Pro_ID desc limit $start,$perpage");
+ $sql = $conn->query("select * from product where Pro_SaleType = '1' order by Pro_ID desc limit $start,$perpage");
 
- $sql2 = $conn->query("select * from product order by Pro_ID desc");
+ $sql2 = $conn->query("select * from product where Pro_SaleType = '1' order by Pro_ID desc");
 $total_record = $sql2->num_rows;
 $total_page = ceil($total_record / $perpage);
 
@@ -34,7 +34,7 @@ $total_page = ceil($total_record / $perpage);
     <div class="thumbnail">
       <a href="view_product.php?id=<?php echo $show['Pro_ID'];?>" class="lot"><img class="img-responsive " width="140px" height="140px" src="images/product/<?php echo $show['Pro_Img'];?>" alt=""></a>
       <div class="caption">
-        <h3><a href="view_product.php?id=<?php echo $show['Pro_ID'];?>"><?php echo iconv_substr($show['Pro_Name'],0,10,'UTF-8').'...';?></a></h3>
+        <h3><a href="view_product.php?id=<?php echo $show['Pro_ID'];?>"><?php echo iconv_substr($show['Pro_Name'],0,20,'UTF-8').'...';?></a></h3>
                 <label  class="add-to">
                 <?php echo number_format($show['Pro_Price'],0);?> บาท
                 </label>
@@ -70,7 +70,7 @@ $total_page = ceil($total_record / $perpage);
 
 	<div class="clearfix"> </div>
 	</div>
-	<!---->
+	<!--ขายส่ง-->
 
 <?php require_once "footer.php";?>
 

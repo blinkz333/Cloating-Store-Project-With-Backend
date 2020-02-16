@@ -128,8 +128,13 @@ Logout($_SESSION['ses_user_id'],'index.php');
               <li><a href="howto_buy.php">วิธีการสั่งซื้อ</a></li>
               <li><a href="howto_pay.php">วิธีการชำระเงิน</a></li>
             </ul>
+          </li>
+          <li><a href="#">สินค้าทั้งหมด <i> </i></a>
+            <ul>
+              <li><a href="all_product_retial.php">สินค้าขายปลีก</a></li>
+              <li><a href="all_product_whoesale.php">สินค้าขายส่ง</a></li>
+            </ul>
           </li> 
-          <li><a href="all_product.php">สินค้าทั้งหมด</a></li>
           <li><a href="contact.php">ติดต่อเรา</a></li>
         </ul>
         <script type="text/javascript" src="js/nav.js"></script>

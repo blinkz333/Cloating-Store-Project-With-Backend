@@ -1,6 +1,16 @@
 <?php require_once "header.php";?>
 
 <?php
+
+//ตรวจสอบการ login เข้าระบบ
+Chk_Login($_SESSION['ses_admin_id'],'index.php');
+
+if($_REQUEST['logout']=='chk'){
+
+//ออกจากระบบ
+Logout($_SESSION['ses_admin_id'],'index.php');
+}
+
 //insert data
 if($_REQUEST['admin']=='insert'){
 

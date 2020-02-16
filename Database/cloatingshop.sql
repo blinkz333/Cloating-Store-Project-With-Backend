@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2020 at 12:39 PM
+-- Generation Time: Feb 16, 2020 at 01:07 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -338,7 +338,18 @@ INSERT INTO `count_page` (`Cou_ID`, `Cou_IP`, `Cou_Date`) VALUES
 (284, '::1', '2020-02-15'),
 (285, '::1', '2020-02-15'),
 (286, '::1', '2020-02-15'),
-(287, '::1', '2020-02-15');
+(287, '::1', '2020-02-15'),
+(288, '::1', '2020-02-16'),
+(289, '::1', '2020-02-16'),
+(290, '::1', '2020-02-16'),
+(291, '::1', '2020-02-16'),
+(292, '::1', '2020-02-16'),
+(293, '::1', '2020-02-16'),
+(294, '::1', '2020-02-16'),
+(295, '::1', '2020-02-16'),
+(296, '::1', '2020-02-16'),
+(297, '::1', '2020-02-16'),
+(298, '::1', '2020-02-16');
 
 -- --------------------------------------------------------
 
@@ -466,6 +477,7 @@ CREATE TABLE `product` (
   `Pro_Amount` int(11) NOT NULL,
   `Pro_Buy` int(11) NOT NULL,
   `Pro_Promotion` int(2) NOT NULL COMMENT 'ถ้าเป็น 0 คือไม่อยู่ในโปรโมชั่น / 1 คือจัดโปรโมชั่น',
+  `Pro_SaleType` int(2) NOT NULL COMMENT '0 = ขายปลีก , 1=ขายส่ง',
   `Pro_Date` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -473,13 +485,16 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`Pro_ID`, `Pro_Img`, `Pro_Name`, `Pro_Detail`, `Pro_Price`, `Pro_Amount`, `Pro_Buy`, `Pro_Promotion`, `Pro_Date`) VALUES
-(000002, '140220_201330.jpg', 'เสื้อสีเทา', 'เสื้อสีเทา งานแฮนด์เใด', 850.00, 99, 1, 0, '2018-09-09'),
-(000003, '140220_201415.jpg', 'เสื้อสีชมพู', 'เสื้อสีชมพู', 230.00, 99, 0, 0, '2018-09-09'),
-(000004, '140220_201438.jpg', 'เสื้อลาย', 'เสื้อลาย', 210.00, 99, 1, 0, '2018-09-09'),
-(000005, '140220_201501.jpg', 'เสื้อสีเหลือง', 'เสื้อสีเหลือง', 190.00, 99, 0, 0, '2018-09-09'),
-(000006, '140220_201521.jpg', 'เสื้อสีน้ำเงิน', 'เสื้อสีน้ำเงิน', 250.00, 97, 2, 1, '2018-09-09'),
-(000008, '110220_213207.jpg', 'เป็ด', 'เป็ดน้อย', 50.00, 98, 2, 1, '2020-02-11');
+INSERT INTO `product` (`Pro_ID`, `Pro_Img`, `Pro_Name`, `Pro_Detail`, `Pro_Price`, `Pro_Amount`, `Pro_Buy`, `Pro_Promotion`, `Pro_SaleType`, `Pro_Date`) VALUES
+(000002, '140220_201330.jpg', 'เสื้อสีเทา', 'เสื้อสีเทา งานแฮนด์เใด', 850.00, 99, 1, 0, 0, '2018-09-09'),
+(000003, '140220_201415.jpg', 'เสื้อสีชมพู', 'เสื้อสีชมพู', 230.00, 99, 0, 0, 0, '2018-09-09'),
+(000004, '140220_201438.jpg', 'เสื้อลาย', 'เสื้อลาย', 210.00, 99, 1, 0, 0, '2018-09-09'),
+(000005, '140220_201501.jpg', 'เสื้อสีเหลือง', 'เสื้อสีเหลือง', 190.00, 99, 0, 0, 0, '2018-09-09'),
+(000006, '140220_201521.jpg', 'เสื้อสีน้ำเงิน', 'เสื้อสีน้ำเงิน', 250.00, 97, 2, 0, 0, '2018-09-09'),
+(000008, '110220_213207.jpg', 'เป็ด', 'เป็ดน้อย', 50.00, 98, 2, 0, 1, '2020-02-11'),
+(000009, '160220_185856.jpg', 'ประวิตร', 'ประวิตรน้อย', 20.00, 99, 0, 1, 1, '2020-02-16'),
+(000010, '160220_190154.jpg', 'ลุงโทนี่', 'ลุงโทนี่', 999.00, 99, 0, 1, 0, '2020-02-16'),
+(000011, '160220_190227.jpg', 'หนูรัตน์', 'หนูรัตน์', 10.00, 999, 0, 1, 1, '2020-02-16');
 
 --
 -- Indexes for dumped tables
@@ -541,7 +556,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `count_page`
 --
 ALTER TABLE `count_page`
-  MODIFY `Cou_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
+  MODIFY `Cou_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=299;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -571,7 +586,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Pro_ID` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Pro_ID` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
