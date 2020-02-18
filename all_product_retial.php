@@ -37,9 +37,24 @@ $total_page = ceil($total_record / $perpage);
         <h3><a href="view_product.php?id=<?php echo $show['Pro_ID'];?>"><?php echo iconv_substr($show['Pro_Name'],0,20,'UTF-8').'...';?></a></h3>
                 <label  class="add-to">
                 <?php echo number_format($show['Pro_Price'],0);?> บาท
-                </label>
-                จำนวนสั่งซื้อ: <?php echo $show['Pro_Buy'];?>
-        <p><button type="button" onclick="window.location='?data=cart&pro_id=<?php echo $show['Pro_ID'];?>'" class="btn btn-danger">Add to cart</button></p>
+            </label>
+            จำนวนสั่งซื้อ: <?php echo $show['Pro_Buy'];?>
+            <?php 
+            $value = $show['Pro_ID'];
+            $url = "window.location=?data=cart&pro_id=$value";
+            $amount = $show['Pro_Amount'];
+            
+            $btnDanger = "btn btn-danger";
+            $btnSuccess = "btn btn-success";
+            $console = "<script>console.log('TEST')</script>";
+
+           
+            if($amount == 0){
+              echo "<p><a><input name='' type='button' class='$btnDanger' value='สินค้าหมด'></a></p>";
+            }else{
+              echo "<p><a href='?data=cart&pro_id=$value'><input name='' type='button' class='$btnSuccess' value='เพิ่มสินค้า'></a></p>";
+            }
+            ?>
       </div>
     </div>
   </div>
