@@ -151,7 +151,7 @@ $total_all = $total - $total_discount;
             </tr>
             <tr class="text-primary">
               <th>รวมค่าใช้จ่ายที่ต้องชำระทั้งหมด:</th>
-              <td class="text-info"><?php echo number_format($total_all,2);?></td>
+              <td class="text-info"><?php echo number_format($total_all + $total_shipping ,2);?></td>
               <td>บาท</td>
             </tr>
             <tr class="text-success">

@@ -21,8 +21,9 @@ while ($show2 = $sql2->fetch_assoc()){
 $conn->query("insert order_detail set Ord_ID = '$show[Ord_ID]',Pro_ID = '$show2[Pro_ID]',Odd_Amount = '$show2[Car_Amount]'")or die ($conn->error());
 
 //insert price total
-$total_price = $show2['Car_Amount'] * $_REQUEST['shipping'];
-$total_price = $_REQUEST['total_price'] + $total_price;
+
+
+$total_price = $_REQUEST['total_price'];
 
 $conn->query("update orders set Ord_PriceTotal = '$total_price' where Ord_ID = '$show[Ord_ID]'");
 

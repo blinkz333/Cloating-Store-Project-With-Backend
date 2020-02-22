@@ -124,7 +124,7 @@ else if($show['Ord_Status']==4){$status =  '<span class=text-danger>ยกเล
                   <td class="small"><?php echo $show['Mem_Email'];?></td>
                   <td class="small"><?php echo $show['Mem_Tel'];?></td>
                   <td class="small" align="center"><?php echo $show['Ord_AmountTotal'];?></td>
-                  <td class="small" align="center"><?php echo number_format($show['Ord_PriceTotal'],0);?></td>
+                  <td class="small" align="center"><?php echo number_format($show['Ord_PriceTotal'] + ($show['Ord_AmountTotal'] * $show['Ord_Shipping']));?></td>
                   <td class="small"><?php echo $show['Ord_DateBuy'];?></td>
                   <td class="small"><?php echo $status;?></td>
                           

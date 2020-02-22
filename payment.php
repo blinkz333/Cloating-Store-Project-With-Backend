@@ -32,6 +32,9 @@ Chk_Insert($sql,'รอตรวจสอบชำระเงิน','history_o
        <?php  
        $sql2 = $conn->query("select * from orders o,member m where o.Mem_ID = m.Mem_ID && o.Ord_ID = '$_REQUEST[id]'");
        $show2 = $sql2->fetch_assoc();
+
+       $sql3 = $conn->query("select * from order_detail o , product p where o.Pro_ID = p.Pro_ID && o.Ord_ID = '$_REQUEST[id]'");
+       $show3 = $sql3->fetch_assoc();
        ?>
      <input type="hidden" name="Ord_ID" value="<?php echo $show2['Ord_ID'];?>">
 
@@ -47,7 +50,7 @@ Chk_Insert($sql,'รอตรวจสอบชำระเงิน','history_o
 
           <div class="form-group col-md-12">
             <h3>จำนวนเงินที่ต้องชำระ:</h3>
-            <input name="price" type="text" class="form-control" disabled value="<?php echo $show2['Ord_PriceTotal'];?>">
+            <input name="price" type="text" class="form-control" disabled value="<?php echo $show2['Ord_PriceTotal'] + ($show2['Ord_Shipping'] * $show2['Ord_AmountTotal']) ;?>">
           </div>
 
           <div class="form-group col-md-12">
